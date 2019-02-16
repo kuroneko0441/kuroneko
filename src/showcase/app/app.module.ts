@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
     ButtonModule,
+    DropdownModule,
     InputModule,
 } from 'kuroneko';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
         BrowserModule,
         AppRoutingModule,
         ButtonModule,
+        DropdownModule,
         InputModule,
     ],
     providers: [],

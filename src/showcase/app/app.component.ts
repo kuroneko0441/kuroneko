@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { KNDropdownModel } from 'kuroneko';
 
 @Component({
     selector: 'kns-app',
@@ -11,6 +12,16 @@ export class AppComponent {
     public defaultInputValue: string = '';
     public multilineInputValue: string = '';
     public fixedMultilineInputValue: string = '';
+    public dropDownOptions: KNDropdownModel[] = [
+        new KNDropdownModel('loooooooooong label1', 'string value 1'),
+        new KNDropdownModel('label2', true),
+        new KNDropdownModel('label3', { value: 'object value' }),
+        new KNDropdownModel('label4', 4),
+    ];
+    public defaultDropDownValue: KNDropdownModel;
+    public defaultDropDownOpened: boolean;
+    public disabledDropDownValue: KNDropdownModel;
+    public disabledDropDownOpened: boolean;
 
     public get defaultInputValueParsed(): string {
         return JSON.stringify(this.defaultInputValue);

@@ -57,3 +57,29 @@
         </div>
     </div>
 </div>
+<div class="component">
+    <div class="component__title">Dropdown</div>
+    <div class="component__content">
+        <div class="component__example__content">
+            <div *ngFor="let dropdownOption of dropDownOptions">{{dropdownOption | json}}</div>
+        </div>
+        <div class="component__example__type">
+            Default
+        </div>
+        <div class="component__example__content">
+            <kn-dropdown [(ngModel)]="defaultDropDownValue" [(opened)]="defaultDropDownOpened" [options]="dropDownOptions" style="width: 100px;"></kn-dropdown>
+            <div>opened: {{defaultDropDownOpened}}</div>
+            <div>value: {{defaultDropDownValue?.value | json}}</div>
+            <div>model: {{defaultDropDownValue | json}}</div>
+        </div>
+        <div class="component__example__type">
+            Disabled
+        </div>
+        <div class="component__example__content">
+            <kn-dropdown [(ngModel)]="disabledDropDownValue" [(opened)]="disabledDropDownOpened" [options]="dropDownOptions" style="width: 100px;" disabled="true"></kn-dropdown>
+            <div>opened: {{disabledDropDownOpened}}</div>
+            <div>value: {{disabledDropDownValue?.value | json}}</div>
+            <div>model: {{disabledDropDownValue | json}}</div>
+        </div>
+    </div>
+</div>
