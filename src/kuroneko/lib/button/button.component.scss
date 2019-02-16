@@ -28,7 +28,7 @@ button {
   padding: 7px 10px 9px 10px;
 
   background-color: inherit;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   color: inherit;
 
   font-size: inherit;
@@ -46,7 +46,7 @@ button {
   }
 
   &:focus {
-    border: 1px solid $primary-light;
+    border: 2px solid $primary-border;
   }
 
   &.disabled, &.disabled:hover, &.disabled:active {
