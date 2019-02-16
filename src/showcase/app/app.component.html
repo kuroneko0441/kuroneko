@@ -1,1 +1,24 @@
 <router-outlet></router-outlet>
+<div class="component">
+    <div class="component__title">Button</div>
+    <div class="component__content">
+        <div class="component__example__type">
+            Default
+        </div>
+        <div class="component__example__content">
+            <kn-button (blur)="defaultButtonEvent = 'blurred!'" (click)="defaultButtonEvent = 'clicked!'" (focus)="defaultButtonEvent = 'focused!'">
+                Default Button
+            </kn-button>
+            event: {{defaultButtonEvent}}
+        </div>
+        <div class="component__example__type">
+            Disabled
+        </div>
+        <div class="component__example__content">
+            <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" disabled="true">
+                Disabled Button
+            </kn-button>
+            event: {{disabledButtonEvent}}
+        </div>
+    </div>
+</div>

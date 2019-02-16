@@ -1,0 +1,56 @@
+@import "../palette";
+
+:host {
+  display: inline-block;
+
+  width: auto;
+  height: 30px;
+
+  margin: 0;
+
+  background-color: $primary;
+  color: $primary-text;
+
+  font-size: 14px;
+  line-height: 14px;
+
+  user-select: none;
+  outline: 0;
+}
+
+button {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: inherit;
+  padding: 7px 10px 9px 10px;
+
+  background-color: inherit;
+  border: 1px solid transparent;
+  color: inherit;
+
+  font-size: inherit;
+  line-height: inherit;
+
+  user-select: inherit;
+  outline: inherit;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+
+  &:active {
+    background-color: $primary-active;
+  }
+
+  &:focus {
+    border: 1px solid $primary-light;
+  }
+
+  &.disabled, &.disabled:hover, &.disabled:active {
+    background-color: rgba($primary, 0.2);
+    color: rgba($primary-text, 0.2);
+  }
+}
