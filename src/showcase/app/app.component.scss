@@ -1,1 +1,46 @@
 @import "kuroneko/index.scss";
+
+:host {
+  display: inline-block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.component {
+  display: inline-block;
+
+  width: calc(100% - 40px);
+
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  background: $primary-background;
+  border: 1px solid $primary-background-border;
+  color: $primary-text;
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-size: 36px;
+  }
+
+  &__content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &__example {
+    &__type {
+      font-size: 24px;
+    }
+
+    &__content {
+      margin-top: 5px;
+      margin-bottom: 30px;
+
+      font-size: 20px;
+    }
+  }
+}
