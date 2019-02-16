@@ -7,8 +7,11 @@
   height: 30px;
 
   margin: 0;
+  padding: 7px 10px 9px 10px;
+  box-sizing: border-box;
 
   background-color: $primary;
+  border: 2px solid transparent;
   color: $primary-text;
 
   font-size: 14px;
@@ -16,26 +19,6 @@
 
   user-select: none;
   outline: 0;
-}
-
-button {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  margin: inherit;
-  padding: 7px 10px 9px 10px;
-
-  background-color: inherit;
-  border: 2px solid transparent;
-  color: inherit;
-
-  font-size: inherit;
-  line-height: inherit;
-
-  user-select: inherit;
-  outline: inherit;
 
   &:hover {
     background-color: $primary-hover;
@@ -50,6 +33,7 @@ button {
   }
 
   &.disabled, &.disabled:hover, &.disabled:active {
+    pointer-events: none;
     background-color: rgba($primary, 0.2);
     color: rgba($primary-text, 0.2);
   }

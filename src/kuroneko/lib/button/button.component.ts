@@ -1,8 +1,7 @@
 import {
     Component,
-    EventEmitter,
+    HostBinding,
     Input,
-    Output,
 } from '@angular/core';
 
 @Component({
@@ -28,36 +27,15 @@ export class ButtonComponent {
         this._disabled = value;
     }
 
-    @Output() public blur: EventEmitter<FocusEvent> = new EventEmitter<FocusEvent>();
-    @Output() public click: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
-    @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter<FocusEvent>();
+    @HostBinding('class.disabled')
+    public get hostDisabled(): boolean {
+        return this.disabled;
+    }
 
-    public get ngClass(): any {
-        return {
-            disabled: this.disabled,
-        };
+    @HostBinding('tabindex')
+    public get hostTabindex(): number {
+        return this.disabled ? -1 : 1;
     }
 
     private _disabled: boolean;
-
-    public onButtonClick(event: MouseEvent): void {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-
-        this.click.emit(event);
-    }
-
-    public onButtonFocus(event: FocusEvent): void {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-
-        this.focus.emit(event);
-    }
-
-    public onButtonBlur(event: FocusEvent): void {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-
-        this.blur.emit(event);
-    }
 }
