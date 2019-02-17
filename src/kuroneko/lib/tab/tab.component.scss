@@ -45,6 +45,10 @@
     background-color: $primary-hover;
   }
 
+  &:active:not(.selected):not(:last-child) {
+    background-color: $primary-active;
+  }
+
   &:last-child {
     flex: 1 1 auto;
   }
