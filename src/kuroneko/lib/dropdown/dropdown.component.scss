@@ -20,8 +20,7 @@
   background-color: $primary;
   color: $white;
 
-  font-size: 14px;
-  line-height: 18px;
+  @include regularFontSize;
 
   outline: 0;
   user-select: none;

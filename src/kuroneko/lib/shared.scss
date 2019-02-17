@@ -22,3 +22,8 @@ $white: #ffffff;
 @function disabled($color) {
   @return rgba($color, 0.6)
 }
+
+@mixin regularFontSize() {
+  font-size: 14px;
+  line-height: 18px;
+}

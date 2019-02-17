@@ -12,8 +12,7 @@
 
   color: $white;
 
-  font-size: 14px;
-  line-height: 18px;
+  @include regularFontSize;
 
   user-select: none;
   outline: 0;
