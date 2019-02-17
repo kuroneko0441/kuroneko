@@ -38,7 +38,7 @@
   }
 
   &.selected {
-    color: $selected;
+    background-color: $primary-light;
   }
 
   &:hover:not(.selected):not(:last-child) {
@@ -75,9 +75,9 @@
 
       height: 2px;
 
-      background-color: $selected;
+      background-color: $primary-light;
 
-      transition: left 300ms cubic-bezier(0.645, 0.045, 0.355, 1), width 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+      //transition: left 300ms cubic-bezier(0.645, 0.045, 0.355, 1), width 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
     }
   }
 }
