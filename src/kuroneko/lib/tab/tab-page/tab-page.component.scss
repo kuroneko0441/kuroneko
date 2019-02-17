@@ -1,0 +1,14 @@
+@import "../../palette";
+
+:host {
+  display: inline-block;
+
+  width: 100%;
+  height: calc(100% - 33px);
+
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+  background-color: $primary;
+  color: $primary-text;
+}

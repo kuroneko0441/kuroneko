@@ -83,3 +83,20 @@
         </div>
     </div>
 </div>
+<div class="component">
+    <div class="component__title">Tab/TabPage</div>
+    <div class="component__content">
+        <div class="component__example__type">
+            Default
+        </div>
+        <div class="component__example__content">
+            <kn-tab style="width: 300px; height: 300px;">
+                <kn-tab-page *ngFor="let _ of [].constructor(3); index as i" [label]="'label' + i" [bodyTemplate]="bodyTemplate">
+                    <ng-template #bodyTemplate>
+                        tab{{i}}
+                    </ng-template>
+                </kn-tab-page>
+            </kn-tab>
+        </div>
+    </div>
+</div>
