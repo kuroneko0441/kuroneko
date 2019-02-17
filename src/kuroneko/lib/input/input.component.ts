@@ -31,7 +31,7 @@ export class InputComponent {
 
         if (this.lastEventValue !== _value) {
             if (this.multiline) {
-                this.inputRef.nativeElement.innerHTML = encodeURIComponent(_value)
+                this.inputRef.nativeElement.innerHTML = decodeURIComponent(encodeURIComponent(_value)
                     .split(encodeURI('\n'))
                     .map((s, i) => {
                         if (s.length === 0) {
@@ -40,7 +40,7 @@ export class InputComponent {
                             return i > 0 ? `<div>${s}</div>` : s;
                         }
                     })
-                    .join('');
+                    .join(''));
             } else {
                 _value = _value.replace(/\n/g, '');
 
