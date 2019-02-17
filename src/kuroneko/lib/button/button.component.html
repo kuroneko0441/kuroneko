@@ -1,1 +1,3 @@
-<ng-content></ng-content>
+<i *ngIf="icon !== '' && iconPos !== 'right'" [ngClass]="iconClass" class="material-icons">{{icon}}</i>
+<span #label [ngClass]="spanClass"><ng-content></ng-content></span>
+<i *ngIf="icon !== '' && iconPos === 'right'" [ngClass]="iconClass" class="material-icons">{{icon}}</i>

@@ -1,13 +1,14 @@
 @import "../shared";
 
 :host {
-  display: inline-block;
+  display: inline-flex;
 
   width: auto;
   height: 30px;
 
   margin: 0;
-  padding: 5px 10px 5px 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   box-sizing: border-box;
 
   color: $white;
@@ -81,5 +82,32 @@
         border: disabled($primary-dark-border);
       }
     }
+  }
+}
+
+i {
+  font-size: 18px;
+  line-height: 18px;
+
+  &.center-icon {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &.left-icon {
+    margin-left: 5px;
+    margin-right: -5px;
+  }
+
+  &.right-icon {
+    margin-left: -5px;
+    margin-right: 5px;
+  }
+}
+
+span {
+  &:not(.empty) {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }

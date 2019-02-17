@@ -1,7 +1,10 @@
 import {
     Component,
+    ElementRef,
     HostBinding,
     Input,
+    OnInit,
+    ViewChild,
 } from '@angular/core';
 
 @Component({
@@ -9,7 +12,7 @@ import {
     templateUrl: './button.component.html',
     styleUrls: [ './button.component.scss' ],
 })
-export class ButtonComponent {
+export class ButtonComponent implements OnInit {
     @Input()
     public get disabled(): boolean {
         return this._disabled;
@@ -28,6 +31,10 @@ export class ButtonComponent {
     }
 
     @Input() public color: string = '';
+    @Input() public icon: string = '';
+    @Input() public iconPos: string = '';
+
+    @ViewChild('label') public labelRef: ElementRef<HTMLSpanElement>;
 
     @HostBinding('class.disabled')
     public get hostDisabled(): boolean {
@@ -54,5 +61,27 @@ export class ButtonComponent {
         return this.disabled ? -1 : 1;
     }
 
+    public get iconClass(): any {
+        return {
+            'left-icon': this.iconPos !== 'right' && !this.emptyLabel,
+            'right-icon': this.iconPos === 'right' && !this.emptyLabel,
+            'center-icon': this.emptyLabel,
+        };
+    }
+
+    public get spanClass(): any {
+        return {
+            'no-icon': this.icon === '',
+            'empty': this.emptyLabel,
+        };
+    }
+
+    public get emptyLabel(): boolean {
+        return this.labelRef ? this.labelRef.nativeElement.innerText === '' : false;
+    }
+
     private _disabled: boolean;
+
+    public ngOnInit(): void {
+    }
 }
