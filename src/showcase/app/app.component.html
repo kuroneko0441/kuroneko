@@ -212,3 +212,33 @@
         </div>
     </div>
 </div>
+<div class="component">
+    <div class="component__title">Dialog</div>
+    <div class="component__content">
+        <div class="component__example__type">
+            Default
+        </div>
+        <div class="component__example__content">
+            <kn-button (click)="dialogVisible = true">Open Dialog</kn-button>
+            <kn-dialog [dialogTemplate]="dialogTemplate" [visible]="dialogVisible">
+                <ng-template #dialogTemplate>
+                    <div class="flex--column">
+                        <div class="flex--row" style="justify-content: flex-start; margin-bottom: 20px;">
+                            Dialog
+                        </div>
+                        <kn-tab style="width: 300px; height: 300px;">
+                            <kn-tab-page *ngFor="let _ of [].constructor(3); index as i" [label]="'label' + i" [bodyTemplate]="tabPageTemplate">
+                                <ng-template #tabPageTemplate>
+                                    tab{{i}}
+                                </ng-template>
+                            </kn-tab-page>
+                        </kn-tab>
+                        <div class="flex--row" style="justify-content: flex-end; margin-top: 20px;">
+                            <kn-button (click)="dialogVisible = false">Close</kn-button>
+                        </div>
+                    </div>
+                </ng-template>
+            </kn-dialog>
+        </div>
+    </div>
+</div>

@@ -24,6 +24,7 @@ export class AppComponent {
     public defaultDropDownOpened: boolean;
     public disabledDropDownValue: KNDropdownModel;
     public disabledDropDownOpened: boolean;
+    public dialogVisible: boolean = false;
 
     public get defaultInputValueParsed(): string {
         return JSON.stringify(this.defaultInputValue);
