@@ -39,7 +39,7 @@
     color: $selected;
   }
 
-  &:hover:not(.selected) {
+  &:hover:not(.selected):not(:last-child) {
     background-color: $primary-hover;
   }
 
