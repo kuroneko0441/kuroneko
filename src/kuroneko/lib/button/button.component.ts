@@ -27,9 +27,26 @@ export class ButtonComponent {
         this._disabled = value;
     }
 
+    @Input() public color: string = '';
+
     @HostBinding('class.disabled')
     public get hostDisabled(): boolean {
         return this.disabled;
+    }
+
+    @HostBinding('class.color--light')
+    public get hostClassLight(): boolean {
+        return this.color === 'light';
+    }
+
+    @HostBinding('class.color--primary')
+    public get hostClassPrimary(): boolean {
+        return !this.hostClassDark && !this.hostClassLight;
+    }
+
+    @HostBinding('class.color--dark')
+    public get hostClassDark(): boolean {
+        return this.color === 'dark';
     }
 
     @HostBinding('tabindex')

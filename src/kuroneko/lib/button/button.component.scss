@@ -10,8 +10,6 @@
   padding: 5px 10px 5px 10px;
   box-sizing: border-box;
 
-  background-color: $primary;
-  border: 1px solid $primary-border;
   color: $white;
 
   font-size: 14px;
@@ -19,22 +17,70 @@
 
   user-select: none;
   outline: 0;
-
-  &:hover {
-    background-color: $primary-hover;
-  }
+  white-space: nowrap;
 
   &:active {
-    background-color: $primary-active;
-  }
-
-  &:focus {
-    border: 1px solid $selected;
+    border: 1px solid $selected !important;
   }
 
   &.disabled, &.disabled:hover, &.disabled:active {
     pointer-events: none;
-    background-color: disabled($primary);
     color: disabled($white);
+  }
+
+  &.color {
+    &--primary {
+      background-color: $primary;
+      border: 1px solid $primary-border;
+
+      &:hover {
+        background-color: $primary-hover;
+      }
+
+      &:active {
+        background-color: $primary-active;
+      }
+
+      &.disabled, &.disabled:hover, &.disabled:active {
+        background-color: disabled($primary);
+        border: disabled($primary-border);
+      }
+    }
+
+    &--light {
+      background-color: $primary-light;
+      border: 1px solid $primary-light-border;
+
+      &:hover {
+        background-color: $primary-light-hover;
+      }
+
+      &:active {
+        background-color: $primary-light-active;
+      }
+
+      &.disabled, &.disabled:hover, &.disabled:active {
+        background-color: disabled($primary-light);
+        border: disabled($primary-light-border);
+      }
+    }
+
+    &--dark {
+      background-color: $primary-dark;
+      border: 1px solid $primary-dark-border;
+
+      &:hover {
+        background-color: $primary-dark-hover;
+      }
+
+      &:active {
+        background-color: $primary-dark-active;
+      }
+
+      &.disabled, &.disabled:hover, &.disabled:active {
+        background-color: disabled($primary-dark);
+        border: disabled($primary-dark-border);
+      }
+    }
   }
 }

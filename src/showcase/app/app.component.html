@@ -5,20 +5,60 @@
         <div class="component__example__type">
             Default
         </div>
-        <div class="component__example__content">
-            <kn-button (blur)="defaultButtonEvent = 'blurred!'" (click)="defaultButtonEvent = 'clicked!'" (focus)="defaultButtonEvent = 'focused!'">
-                Default Button
-            </kn-button>
-            event: {{defaultButtonEvent}}
+        <div class="flex--row">
+            <div class="flex__item">
+                <div class="component__example__content">
+                    <kn-button (blur)="primaryButtonEvent = 'blurred!'" (click)="primaryButtonEvent = 'clicked!'" (focus)="primaryButtonEvent = 'focused!'">
+                        Primary Button
+                    </kn-button>
+                </div>
+                event: {{primaryButtonEvent}}
+            </div>
+            <div class="flex__item">
+                <div class="component__example__content">
+                    <kn-button (blur)="lightButtonEvent = 'blurred!'" (click)="lightButtonEvent = 'clicked!'" (focus)="lightButtonEvent = 'focused!'" color="light">
+                        Light Button
+                    </kn-button>
+                </div>
+                event: {{lightButtonEvent}}
+            </div>
+            <div class="flex__item">
+                <div class="component__example__content">
+                    <kn-button (blur)="darkButtonEvent = 'blurred!'" (click)="darkButtonEvent = 'clicked!'" (focus)="darkButtonEvent = 'focused!'" color="dark">
+                        Dark Button
+                    </kn-button>
+                </div>
+                event: {{darkButtonEvent}}
+            </div>
         </div>
         <div class="component__example__type">
             Disabled
         </div>
-        <div class="component__example__content">
-            <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" disabled="true">
-                Disabled Button
-            </kn-button>
-            event: {{disabledButtonEvent}}
+        <div class="flex--row">
+            <div class="flex__item">
+                <div class="component__example__content">
+                    <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" disabled="true">
+                        Default Disabled Button
+                    </kn-button>
+                </div>
+                event: {{disabledButtonEvent}}
+            </div>
+            <div class="flex__item">
+                <div class="component__example__content">
+                    <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" color="light" disabled="true">
+                        Light Disabled Button
+                    </kn-button>
+                </div>
+                event: {{disabledButtonEvent}}
+            </div>
+            <div class="flex__item">
+                <div class="component__example__content">
+                    <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" color="dark" disabled="true">
+                        Dark Disabled Button
+                    </kn-button>
+                </div>
+                event: {{disabledButtonEvent}}
+            </div>
         </div>
     </div>
 </div>

@@ -7,7 +7,9 @@ import { KNDropdownModel } from 'kuroneko';
     styleUrls: [ './app.component.scss' ],
 })
 export class AppComponent {
-    public defaultButtonEvent: string = '';
+    public primaryButtonEvent: string = '';
+    public lightButtonEvent: string = '';
+    public darkButtonEvent: string = '';
     public disabledButtonEvent: string = '';
     public defaultInputValue: string = '';
     public multilineInputValue: string = '';

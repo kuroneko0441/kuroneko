@@ -42,3 +42,27 @@
     }
   }
 }
+
+.flex {
+  &--row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &--column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    .flex--row & {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .flex--column & {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
