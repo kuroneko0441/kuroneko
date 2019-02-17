@@ -41,6 +41,7 @@
 
   &:active {
     background-color: $primary-active;
+    border: 1px solid $selected;
   }
 
   &.opened {
