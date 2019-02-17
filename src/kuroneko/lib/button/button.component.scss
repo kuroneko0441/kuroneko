@@ -12,7 +12,7 @@
 
   background-color: $primary;
   border: 1px solid $primary-border;
-  color: $primary-text;
+  color: $white;
 
   font-size: 14px;
   line-height: 14px;
@@ -35,6 +35,6 @@
   &.disabled, &.disabled:hover, &.disabled:active {
     pointer-events: none;
     background-color: rgba($primary, 0.2);
-    color: rgba($primary-text, 0.2);
+    color: rgba($white, 0.2);
   }
 }

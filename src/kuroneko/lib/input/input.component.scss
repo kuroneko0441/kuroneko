@@ -28,7 +28,7 @@
 .input-container {
   background-color: $primary;
   border: 1px solid $primary-border;
-  color: $primary-text;
+  color: $white;
 
   outline: 0;
   white-space: nowrap;
@@ -48,7 +48,7 @@
 
   &.disabled {
     background-color: rgba($primary, 0.2);
-    color: rgba($primary-text, 0.2);
+    color: rgba($white, 0.2);
     overflow: hidden;
   }
 }
@@ -58,7 +58,7 @@
   top: 0;
   left: 0;
 
-  color: rgba($primary-text, 0.5);
+  color: rgba($white, 0.5);
 
   white-space: pre-line;
   pointer-events: none;
