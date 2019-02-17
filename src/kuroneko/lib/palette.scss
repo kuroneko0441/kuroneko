@@ -11,3 +11,7 @@ $primary-background-border: #9fa6aa;
 $selected: #3e9ff8;
 $black: #000000;
 $white: #ffffff;
+
+@function disabled($color) {
+  @return rgba($color, 0.6)
+}

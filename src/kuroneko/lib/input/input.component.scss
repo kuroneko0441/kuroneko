@@ -47,8 +47,8 @@
   }
 
   &.disabled {
-    background-color: rgba($primary, 0.2);
-    color: rgba($white, 0.2);
+    background-color: disabled($primary);
+    color: disabled($white);
     overflow: hidden;
   }
 }
