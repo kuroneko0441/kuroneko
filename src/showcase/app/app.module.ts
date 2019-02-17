@@ -4,6 +4,7 @@ import {
     ButtonModule,
     DropdownModule,
     InputModule,
+    ProgressModule,
     TabModule,
 } from 'kuroneko';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { AppComponent } from './app.component';
         DropdownModule,
         InputModule,
         TabModule,
+        ProgressModule,
     ],
     providers: [],
     bootstrap: [ AppComponent ],

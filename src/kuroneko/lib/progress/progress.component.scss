@@ -1,0 +1,48 @@
+@import "../palette";
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 2em 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+:host {
+  display: flex;
+
+  width: 100%;
+  height: 2em;
+
+  line-height: 2em;
+
+  background-color: $primary-background;
+  border: 1px solid $primary-background-border;
+}
+
+.progress-filled {
+  display: inline-block;
+
+  width: 0;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  background-color: $primary;
+  color: $white;
+
+  text-align: center;
+
+  user-select: none;
+  transition: width 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &.striped {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-size: 2em 2em;
+
+    &.animated {
+      animation: progress-bar-stripes 1s linear infinite;
+    }
+  }
+}
