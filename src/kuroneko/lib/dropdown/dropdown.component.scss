@@ -31,6 +31,10 @@
 .dropdown-selector {
   display: flex;
 
+  box-sizing: border-box;
+
+  border: 1px solid $primary-border;
+
   &:hover {
     background-color: $primary-hover;
   }
@@ -41,7 +45,8 @@
 
   &.opened {
     background-color: $primary-active;
-    border-bottom: 1px solid $primary-border;
+    border: 1px solid $selected;
+    border-bottom: 1px solid transparent;
   }
 
   &.disabled, &.disabled:hover, &.disabled:active {
@@ -89,6 +94,8 @@
 
     display: flex;
     flex-direction: column;
+
+    border: 1px solid $primary-border;
 
     min-width: 100%;
   }

@@ -11,7 +11,7 @@
   box-sizing: border-box;
 
   background-color: $primary;
-  border: 2px solid transparent;
+  border: 1px solid $primary-border;
   color: $primary-text;
 
   font-size: 14px;
@@ -29,7 +29,7 @@
   }
 
   &:focus {
-    border: 2px solid $primary-border;
+    border: 1px solid $selected;
   }
 
   &.disabled, &.disabled:hover, &.disabled:active {

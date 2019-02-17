@@ -5,9 +5,11 @@
   display: inline-block;
 
   width: auto !important;
-  border: 0;
+
+  box-sizing: border-box;
 
   background-color: $primary;
+  border: 1px solid $primary-border;
   color: $primary-text;
 
   outline: 0;

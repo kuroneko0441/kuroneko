@@ -21,14 +21,13 @@
   padding: 3px 10px 5px 10px;
   box-sizing: border-box;
 
-  border: 2px solid transparent;
-
   font-size: 14px;
   line-height: 18px;
 }
 
 .input-container {
   background-color: $primary;
+  border: 1px solid $primary-border;
   color: $primary-text;
 
   outline: 0;
@@ -36,7 +35,7 @@
   overflow: hidden;
 
   &:focus {
-    border: 2px solid $primary-border;
+    border: 1px solid $selected;
   }
 
   &.multiline {
