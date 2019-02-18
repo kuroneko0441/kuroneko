@@ -87,6 +87,62 @@
     </div>
 </div>
 <div class="component">
+    <div class="component__title">Dialog</div>
+    <div class="component__content">
+        <div class="component__example__type">
+            Default
+        </div>
+        <div class="component__example__content">
+            <kn-button (click)="dialogVisible = true">Open Dialog</kn-button>
+            <kn-dialog [dialogTemplate]="dialogTemplate" [visible]="dialogVisible">
+                <ng-template #dialogTemplate>
+                    <div class="flex--column">
+                        <div class="flex--row" style="justify-content: flex-start; margin-bottom: 20px;">
+                            Dialog
+                        </div>
+                        <kn-tab style="width: 300px; height: 300px;">
+                            <kn-tab-page *ngFor="let _ of [].constructor(3); index as i" [label]="'label' + i" [bodyTemplate]="tabPageTemplate">
+                                <ng-template #tabPageTemplate>
+                                    tab{{i}}
+                                </ng-template>
+                            </kn-tab-page>
+                        </kn-tab>
+                        <div class="flex--row" style="justify-content: flex-end; margin-top: 20px;">
+                            <kn-button (click)="dialogVisible = false">Close</kn-button>
+                        </div>
+                    </div>
+                </ng-template>
+            </kn-dialog>
+        </div>
+    </div>
+</div>
+<div class="component">
+    <div class="component__title">Dropdown</div>
+    <div class="component__content">
+        <div class="component__example__content">
+            <div *ngFor="let dropdownOption of dropDownOptions">{{dropdownOption | json}}</div>
+        </div>
+        <div class="component__example__type">
+            Default
+        </div>
+        <div class="component__example__content">
+            <kn-dropdown [(ngModel)]="defaultDropDownValue" [(opened)]="defaultDropDownOpened" [options]="dropDownOptions" style="width: 100px;"></kn-dropdown>
+            <div>opened: {{defaultDropDownOpened}}</div>
+            <div>value: {{defaultDropDownValue?.value | json}}</div>
+            <div>model: {{defaultDropDownValue | json}}</div>
+        </div>
+        <div class="component__example__type">
+            Disabled
+        </div>
+        <div class="component__example__content">
+            <kn-dropdown [(ngModel)]="disabledDropDownValue" [(opened)]="disabledDropDownOpened" [options]="dropDownOptions" style="width: 100px;" disabled="true"></kn-dropdown>
+            <div>opened: {{disabledDropDownOpened}}</div>
+            <div>value: {{disabledDropDownValue?.value | json}}</div>
+            <div>model: {{disabledDropDownValue | json}}</div>
+        </div>
+    </div>
+</div>
+<div class="component">
     <div class="component__title">Input</div>
     Input component must be inline-block.
     <div class="component__content">
@@ -118,32 +174,6 @@
             <kn-input [(ngModel)]="defaultInputValue" style="width: 200px;" multiline="false" disabled="true" placeholder="Disabled singeline"></kn-input>
             <kn-input [(ngModel)]="multilineInputValue" style="width: 200px; margin-left: 20px;" multiline="true" disabled="true" placeholder="Disabled multiline"></kn-input>
             <kn-input [(ngModel)]="fixedMultilineInputValue" style="width: 200px; height: 50px; margin-left: 20px;" multiline="true" disabled="true" placeholder="Disabled multiline(fixed)"></kn-input>
-        </div>
-    </div>
-</div>
-<div class="component">
-    <div class="component__title">Dropdown</div>
-    <div class="component__content">
-        <div class="component__example__content">
-            <div *ngFor="let dropdownOption of dropDownOptions">{{dropdownOption | json}}</div>
-        </div>
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="component__example__content">
-            <kn-dropdown [(ngModel)]="defaultDropDownValue" [(opened)]="defaultDropDownOpened" [options]="dropDownOptions" style="width: 100px;"></kn-dropdown>
-            <div>opened: {{defaultDropDownOpened}}</div>
-            <div>value: {{defaultDropDownValue?.value | json}}</div>
-            <div>model: {{defaultDropDownValue | json}}</div>
-        </div>
-        <div class="component__example__type">
-            Disabled
-        </div>
-        <div class="component__example__content">
-            <kn-dropdown [(ngModel)]="disabledDropDownValue" [(opened)]="disabledDropDownOpened" [options]="dropDownOptions" style="width: 100px;" disabled="true"></kn-dropdown>
-            <div>opened: {{disabledDropDownOpened}}</div>
-            <div>value: {{disabledDropDownValue?.value | json}}</div>
-            <div>model: {{disabledDropDownValue | json}}</div>
         </div>
     </div>
 </div>
@@ -209,36 +239,6 @@
         <div class="component__example__content">
             <kn-progress value="90" height="20" label="true" striped="true" animated="true" style="margin-bottom: 10px;"></kn-progress>
             <kn-progress value="50" height="40" label="true" striped="true" animated="true"></kn-progress>
-        </div>
-    </div>
-</div>
-<div class="component">
-    <div class="component__title">Dialog</div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="component__example__content">
-            <kn-button (click)="dialogVisible = true">Open Dialog</kn-button>
-            <kn-dialog [dialogTemplate]="dialogTemplate" [visible]="dialogVisible">
-                <ng-template #dialogTemplate>
-                    <div class="flex--column">
-                        <div class="flex--row" style="justify-content: flex-start; margin-bottom: 20px;">
-                            Dialog
-                        </div>
-                        <kn-tab style="width: 300px; height: 300px;">
-                            <kn-tab-page *ngFor="let _ of [].constructor(3); index as i" [label]="'label' + i" [bodyTemplate]="tabPageTemplate">
-                                <ng-template #tabPageTemplate>
-                                    tab{{i}}
-                                </ng-template>
-                            </kn-tab-page>
-                        </kn-tab>
-                        <div class="flex--row" style="justify-content: flex-end; margin-top: 20px;">
-                            <kn-button (click)="dialogVisible = false">Close</kn-button>
-                        </div>
-                    </div>
-                </ng-template>
-            </kn-dialog>
         </div>
     </div>
 </div>
