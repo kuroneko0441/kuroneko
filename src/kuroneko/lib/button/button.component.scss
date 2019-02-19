@@ -82,6 +82,24 @@
         border: 1px solid disabled($primary-dark-border);
       }
     }
+
+    &--minimal {
+      background-color: transparent;
+      border: 1px solid $primary-border;
+
+      &:hover {
+        background-color: rgba($white, 0.1);
+      }
+
+      &:active {
+        background-color: rgba($white, 0.2);
+      }
+
+      &.disabled, &.disabled:hover, &.disabled:active {
+        background-color: transparent;
+        border: 1px solid disabled($primary-border);
+      }
+    }
   }
 }
 
