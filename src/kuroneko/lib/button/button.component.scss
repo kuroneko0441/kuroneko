@@ -43,7 +43,7 @@
 
       &.disabled, &.disabled:hover, &.disabled:active {
         background-color: disabled($primary);
-        border: disabled($primary-border);
+        border: 1px solid disabled($primary-border);
       }
     }
 
@@ -61,7 +61,7 @@
 
       &.disabled, &.disabled:hover, &.disabled:active {
         background-color: disabled($primary-light);
-        border: disabled($primary-light-border);
+        border: 1px solid disabled($primary-light-border);
       }
     }
 
@@ -79,7 +79,7 @@
 
       &.disabled, &.disabled:hover, &.disabled:active {
         background-color: disabled($primary-dark);
-        border: disabled($primary-dark-border);
+        border: 1px solid disabled($primary-dark-border);
       }
     }
   }
