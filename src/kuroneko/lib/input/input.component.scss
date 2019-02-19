@@ -49,6 +49,10 @@
     background-color: disabled($primary);
     color: disabled($white);
     overflow: hidden;
+
+    & ~ .input-placeholder {
+      color: rgba($white, 0.2)
+    }
   }
 }
 
