@@ -61,6 +61,11 @@ export class ButtonComponent implements OnInit {
         return this.color === 'minimal';
     }
 
+    @HostBinding('class.color--text')
+    public get hostClassText(): boolean {
+        return this.color === 'text';
+    }
+
     @HostBinding('tabindex')
     public get hostTabindex(): number {
         return this.disabled ? -1 : 1;
