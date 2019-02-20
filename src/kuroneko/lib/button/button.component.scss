@@ -1,5 +1,25 @@
 @import "../shared";
 
+@mixin coloredClass($color-name, $color) {
+  &.color--#{$color-name} {
+    background-color: $color;
+    border: 1px solid border($color);
+
+    &:hover {
+      background-color: hover($color);
+    }
+
+    &:active {
+      background-color: active($color);
+    }
+
+    &.disabled, &.disabled:hover, &.disabled:active {
+      background-color: disabled($color);
+      border: 1px solid disabled(border($color));
+    }
+  }
+}
+
 :host {
   display: inline-flex;
 
@@ -11,7 +31,7 @@
   padding-bottom: 5px;
   box-sizing: border-box;
 
-  color: $white;
+  color: $text;
 
   @include regularFontSize;
 
@@ -20,84 +40,34 @@
   white-space: nowrap;
 
   &:active {
-    border: 1px solid $selected !important;
+    border: 1px solid $text !important;
   }
 
   &.disabled, &.disabled:hover, &.disabled:active {
     pointer-events: none;
-    color: disabled($white);
+    color: disabled($text);
   }
 
+  @include coloredClass('primary', $primary);
+  @include coloredClass('light', light($primary));
+  @include coloredClass('dark', dark($primary));
+
   &.color {
-    &--primary {
-      background-color: $primary;
-      border: 1px solid $primary-border;
-
-      &:hover {
-        background-color: $primary-hover;
-      }
-
-      &:active {
-        background-color: $primary-active;
-      }
-
-      &.disabled, &.disabled:hover, &.disabled:active {
-        background-color: disabled($primary);
-        border: 1px solid disabled($primary-border);
-      }
-    }
-
-    &--light {
-      background-color: $primary-light;
-      border: 1px solid $primary-light-border;
-
-      &:hover {
-        background-color: $primary-light-hover;
-      }
-
-      &:active {
-        background-color: $primary-light-active;
-      }
-
-      &.disabled, &.disabled:hover, &.disabled:active {
-        background-color: disabled($primary-light);
-        border: 1px solid disabled($primary-light-border);
-      }
-    }
-
-    &--dark {
-      background-color: $primary-dark;
-      border: 1px solid $primary-dark-border;
-
-      &:hover {
-        background-color: $primary-dark-hover;
-      }
-
-      &:active {
-        background-color: $primary-dark-active;
-      }
-
-      &.disabled, &.disabled:hover, &.disabled:active {
-        background-color: disabled($primary-dark);
-        border: 1px solid disabled($primary-dark-border);
-      }
-    }
-
     &--minimal {
-      background-color: transparent;
-      border: 1px solid $primary-border;
+      background-color: $minimal;
+      border: 1px solid border($primary);
 
       &:hover {
-        background-color: rgba($white, 0.1);
+        background-color: $minimal-hover;
       }
 
       &:active {
-        background-color: rgba($white, 0.2);
+        background-color: $minimal-active;
       }
 
       &.disabled, &.disabled:hover, &.disabled:active {
-        background-color: transparent;
-        border: 1px solid disabled($primary-border);
+        background-color: $minimal;
+        border: 1px solid disabled(border($primary));
       }
     }
 
@@ -112,13 +82,13 @@
 
       &:hover {
         background-color: transparent;
-        color: rgba($white, 0.8);
+        color: $text-hover;
       }
 
       &:active {
         background-color: transparent;
         border: 0 !important;
-        color: rgba($white, 0.6);
+        color: $text-active;
       }
 
       &.disabled, &.disabled:hover, &.disabled:active {

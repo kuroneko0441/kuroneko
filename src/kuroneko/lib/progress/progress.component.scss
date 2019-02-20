@@ -17,8 +17,8 @@
 
   line-height: 2em;
 
-  background-color: $progress-background;
-  border: 1px solid $primary-border;
+  background-color: active($primary-background);
+  border: 1px solid border($primary);
 }
 
 .progress-filled {
@@ -30,7 +30,7 @@
   box-sizing: border-box;
 
   background-color: $primary;
-  color: $white;
+  color: $text;
 
   text-align: center;
 

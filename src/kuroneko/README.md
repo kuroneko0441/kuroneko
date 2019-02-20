@@ -112,8 +112,14 @@ UI Components for Angular(2~)
   </kn-tab>
   ```
 
-### Palette
+### Theming
 
-- primary
-- light
-- dark
+Theme file: `shared.scss`
+
+You can import this file from your `.scss` file to use predefined values.
+```
+@import "~kuroneko/shared.scss";
+```
+
+If you want to change theme, you just need to change `$primary` variable.  
+Any other variables(`primary-background`, `$text`, ...) will computed from `$primary` variable.

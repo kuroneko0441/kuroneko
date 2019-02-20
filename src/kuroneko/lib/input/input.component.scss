@@ -26,15 +26,15 @@
 
 .input-container {
   background-color: $primary;
-  border: 1px solid $primary-border;
-  color: $white;
+  border: 1px solid border($primary);
+  color: $text;
 
   outline: 0;
   white-space: nowrap;
   overflow: hidden;
 
   &:focus {
-    border: 1px solid $selected;
+    border: 1px solid $text;
   }
 
   &.multiline {
@@ -47,11 +47,11 @@
 
   &.disabled {
     background-color: disabled($primary);
-    color: disabled($white);
+    color: disabled($text);
     overflow: hidden;
 
     & ~ .input-placeholder {
-      color: rgba($white, 0.2)
+      color: rgba($text, 0.2);
     }
   }
 }
@@ -61,7 +61,7 @@
   top: 0;
   left: 0;
 
-  color: rgba($white, 0.5);
+  color: rgba($text, 0.5);
 
   white-space: pre-line;
   pointer-events: none;

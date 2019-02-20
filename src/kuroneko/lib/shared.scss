@@ -1,24 +1,22 @@
-$primary: #475560;
-$primary-hover: #59666f;
-$primary-active: #6b767f;
-$primary-border: #7e888f;
+@function light($color) {
+  @return lighten($color, 10)
+}
 
-$primary-light: #5d6f7d;
-$primary-light-hover: #6d7d8a;
-$primary-light-active: #7d8b97;
-$primary-light-border: #8d9aa4;
+@function dark($color) {
+  @return darken($color, 10)
+}
 
-$primary-dark: #313b43;
-$primary-dark-hover: #454e55;
-$primary-dark-active: #5a6268;
-$primary-dark-border: #6e757b;
+@function hover($color) {
+  @return rgb(red($color) + (255 - red($color)) / 10, green($color) + (255 - green($color)) / 10, blue($color) + (255 - blue($color)) / 10)
+}
 
-$primary-background: #444444;
-$progress-background: #666666;
+@function active($color) {
+  @return rgb(red($color) + (255 - red($color)) / 10 * 2, green($color) + (255 - green($color)) / 10 * 2, blue($color) + (255 - blue($color)) / 10 * 2);
+}
 
-$selected: #3e9ff8;
-$black: #000000;
-$white: #ffffff;
+@function border($color) {
+  @return rgb(red($color) + (255 - red($color)) / 10 * 3, green($color) + (255 - green($color)) / 10 * 3, blue($color) + (255 - blue($color)) / 10 * 3);
+}
 
 @function disabled($color) {
   @return rgba($color, 0.6)
@@ -33,3 +31,17 @@ $white: #ffffff;
   font-size: 18px;
   line-height: 18px;
 }
+
+$black: #000000;
+$white: #ffffff;
+
+$primary: #475560;
+$primary-background: if(lightness($primary) > 50, #fafafa, #666666);
+
+$text: if(lightness($primary) > 50, #000000, #ffffff);
+$text-hover: rgba($text, 0.7);
+$text-active: rgba($text, 0.4);
+
+$minimal: transparent;
+$minimal-hover: mix($primary-background, $primary);
+$minimal-active: mix($primary-background, $primary, 25%);
