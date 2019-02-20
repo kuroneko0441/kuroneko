@@ -5,9 +5,9 @@
   "projects": {
     "kuroneko": {
       "root": "src/kuroneko",
-      "sourceRoot": "src/kuroneko",
+      "sourceRoot": "src/kuroneko/src",
       "projectType": "library",
-      "prefix": "kns",
+      "prefix": "kn",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",

@@ -2,6 +2,6 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/kuroneko",
   "lib": {
-    "entryFile": "./index.ts"
+    "entryFile": "./src/public_api.ts"
   }
 }
