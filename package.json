@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build && npm run copy-misc",
     "lint": "ng lint",
-    "copy-misc": "cpx src/kuroneko/shared.scss dist/kuroneko/ && cpx README.md dist/kuroneko/"
+    "copy-misc": "cpx src/kuroneko/src/shared.scss dist/kuroneko/ && cpx README.md dist/kuroneko/"
   },
   "private": true,
   "dependencies": {
