@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "node"
+  - "8"
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install sshpass -y
+
+script:
+  - npm run lint
+  - npm run build
+  
+after_success:
+  - test $TRAVIS_BRANCH = "master" && sshpass -p$SSH_PASSWORD ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "rm -rf deploy/kuroneko && mkdir -p deploy/kuroneko"
+  - test $TRAVIS_BRANCH = "master" && sshpass -p$SSH_PASSWORD scp -o StrictHostKeyChecking=no -r dist/showcase/* $SSH_USER@$SSH_HOST:deploy/kuroneko
