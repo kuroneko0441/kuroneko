@@ -4,7 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "kuroneko": {
-      "root": "src/kuroneko",
+      "root": "src",
       "sourceRoot": "src/kuroneko/src",
       "projectType": "library",
       "prefix": "kn",
