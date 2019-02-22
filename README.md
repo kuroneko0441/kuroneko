@@ -139,3 +139,19 @@ You can import this file from your `.scss` file to use predefined values.
 
 If you want to change theme, you just need to change `$primary` variable.  
 Any other variables(`primary-background`, `$text`, ...) will computed from `$primary` variable.
+
+### Icons
+
+We use [Material Design Icons](https://material.io/tools/icons) for our library.  
+You need to import [Material Design Icons css](https://fonts.googleapis.com/icon?family=Material+Icons) to use these components properly.
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```  
+
+Also you can use these icons, just pick icon name and write it.
+
+```html
+<i class="material-icons">done</i>
+<i class="material-icons">face</i>
+<i class="material-icons">fingerprint</i>
+``` 
