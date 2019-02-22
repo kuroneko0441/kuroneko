@@ -89,6 +89,22 @@ UI Components for Angular(2~)
   ```
     <kn-progress value="40" label="true"></kn-progress>
   ```
+- **Paginator**
+  - module 
+    - `PaginatorModule`
+  - component
+    - `paginatorComponent`
+  - property
+    - page
+    - firstPage
+    - lastPage
+    - sidePages
+  - event
+    - pageChange
+  - example: 
+  ```
+    <kn-paginator [(page)]="2" [firstPage]="1" [lastPage]="7" [sidePages]="3"></kn-paginator>
+  ```
 - **Tab**
   - module 
     - `TabModule`

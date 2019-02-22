@@ -1,0 +1,82 @@
+@import "../shared";
+
+:host {
+  display: inline-flex;
+
+  box-sizing: border-box;
+}
+
+.button {
+  &,
+  &--first,
+  &--prev,
+  &--left,
+  &--right,
+  &--next,
+  &--last {
+    @include regularFontSize;
+
+    display: inline-block;
+
+    min-width: 30px;
+    height: 30px;
+
+    padding: 5px;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    border-top: 1px solid border($primary);
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid border($primary);
+    border-left: 1px solid transparent;
+
+    background-color: $primary;
+
+    cursor: default;
+    user-select: none;
+
+    &:hover {
+      background-color: hover($primary);
+    }
+
+    &:active {
+      background-color: active($primary);
+    }
+
+    &.disabled {
+      background-color: disabled($primary);
+      color: disabled($text);
+    }
+  }
+
+  & {
+    border-left: 1px solid border($primary);
+    border-right: 1px solid border($primary);
+
+    background-color: light($primary);
+
+    &:hover,
+    &:active {
+      background-color: light($primary);
+    }
+  }
+
+  &--first,
+  &--prev,
+  &--left {
+    border-left: 1px solid border($primary);
+  }
+
+  &--right,
+  &--next,
+  &--last {
+    border-right: 1px solid border($primary);
+  }
+}
+
+i {
+  @include regularIconSize;
+
+  display: block;
+}

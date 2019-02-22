@@ -7,6 +7,8 @@ export * from './dropdown/dropdown.module';
 export * from './dropdown/types';
 export * from './input/input.component';
 export * from './input/input.module';
+export * from './paginatior/paginator.component';
+export * from './paginatior/paginator.module';
 export * from './progress/progress.component';
 export * from './progress/progress.module';
 export * from './tab/tab.component';

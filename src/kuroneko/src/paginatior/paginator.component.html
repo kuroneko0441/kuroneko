@@ -1,0 +1,21 @@
+<div (click)="page = firstPage" [ngClass]="prevClass" class="button--first">
+    <i class="material-icons">first_page</i>
+</div>
+<div class="button--prev" [ngClass]="prevClass" (click)="page = page - 1">
+    <i class="material-icons">chevron_left</i>
+</div>
+<div class="button--left" *ngFor="let leftPage of leftPages" (click)="page = leftPage">
+    <span>{{leftPage}}</span>
+</div>
+<div class="button">
+    <span>{{page}}</span>
+</div>
+<div class="button--right" *ngFor="let rightPage of rightPages" (click)="page = rightPage">
+    <span>{{rightPage}}</span>
+</div>
+<div class="button--next" [ngClass]="nextClass" (click)="page = page +1">
+    <i class="material-icons">chevron_right</i>
+</div>
+<div class="button--last" [ngClass]="nextClass" (click)="page = lastPage">
+    <i class="material-icons">last_page</i>
+</div>

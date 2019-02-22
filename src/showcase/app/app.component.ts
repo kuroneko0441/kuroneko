@@ -25,6 +25,10 @@ export class AppComponent {
     public disabledDropDownValue: KNDropdownModel;
     public disabledDropDownOpened: boolean;
     public dialogVisible: boolean = false;
+    public paginatorFirstPage: number = 1;
+    public paginatorLastPage: number = 10;
+    public paginatorSidePages: number = 2;
+    public paginatorPage: number = this.paginatorFirstPage;
 
     public get defaultInputValueParsed(): string {
         return JSON.stringify(this.defaultInputValue);
