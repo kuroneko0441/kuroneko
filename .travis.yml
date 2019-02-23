@@ -3,6 +3,11 @@ node_js:
   - "node"
   - "8"
 
+branches:
+  only:
+    - master
+    - develop
+
 before_install:
   - sudo apt-get update
   - sudo apt-get install sshpass -y

@@ -1,6 +1,19 @@
 {
   "name": "kuroneko",
-  "version": "0.6.1",
+  "version": "0.7.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuroneko0441/kuroneko.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular-library",
+    "angular-component",
+    "angular-components",
+    "kuroneko"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

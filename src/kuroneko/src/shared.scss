@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
 @function light($color) {
   @return lighten($color, 10)
 }
@@ -45,3 +47,7 @@ $text-active: rgba($text, 0.4);
 $minimal: transparent;
 $minimal-hover: mix($primary-background, $primary);
 $minimal-active: mix($primary-background, $primary, 25%);
+
+:host {
+  font-family: 'Noto Sans', sans-serif;
+}
