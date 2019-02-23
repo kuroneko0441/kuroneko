@@ -2,6 +2,10 @@
   "name": "kuroneko",
   "version": "0.6.1",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuroneko0441/kuroneko.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
