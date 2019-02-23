@@ -65,4 +65,16 @@ export class PaginatorComponent {
     }
 
     private _page: number = this.firstPage;
+
+    public onPrevButtonClick(): void {
+        if (this.page > this.firstPage) {
+            this.page = this.page - 1;
+        }
+    }
+
+    public onNextButtonClick(): void {
+        if (this.page < this.lastPage) {
+            this.page = this.page + 1;
+        }
+    }
 }
