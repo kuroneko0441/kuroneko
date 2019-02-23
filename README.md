@@ -1,5 +1,7 @@
 # kuroneko
 
+[![Build Status](https://travis-ci.com/kuroneko0441/kuroneko.svg?token=3zUeqTbGC3p63xQyePbp&branch=develop)](https://travis-ci.com/kuroneko0441/kuroneko)
+
 **ALPHA VERSION. THIS README WILL BE WELL ORGANIZED NEAR FUTURE.**
 
 UI Components for Angular(2~)
