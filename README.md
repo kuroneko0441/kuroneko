@@ -2,15 +2,18 @@
 
 UI Components for Angular(2~)
 
-**ALPHA VERSION. THIS README WILL BE WELL ORGANIZED NEAR FUTURE.**
-
 [![Build Status](https://travis-ci.com/kuroneko0441/kuroneko.svg?token=3zUeqTbGC3p63xQyePbp&branch=develop)](https://travis-ci.com/kuroneko0441/kuroneko)
-
-#### Browsers support
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Electron |
 | --------- | --------- |
 | last version| last version
+
+**ALPHA VERSION. THIS README WILL BE WELL ORGANIZED NEAR FUTURE.**
+
+### Showcase
+
+We're building showcase website for this library.  
+Until then, you can serve showcase locally on `localhost:4200` with `npm start`.
 
 ### Components
 
