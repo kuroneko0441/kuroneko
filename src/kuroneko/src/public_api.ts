@@ -9,6 +9,8 @@ export * from './input/input.component';
 export * from './input/input.module';
 export * from './paginator/paginator.component';
 export * from './paginator/paginator.module';
+export * from './panel/panel.component';
+export * from './panel/panel.module';
 export * from './progress/progress.component';
 export * from './progress/progress.module';
 export * from './tab/tab.component';

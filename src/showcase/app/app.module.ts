@@ -7,6 +7,7 @@ import {
     DropdownModule,
     InputModule,
     PaginatorModule,
+    PanelModule,
     ProgressModule,
     TabModule,
 } from 'kuroneko';
@@ -27,6 +28,7 @@ import { AppComponent } from './app.component';
         InputModule,
         TabModule,
         PaginatorModule,
+        PanelModule,
         ProgressModule,
     ],
     providers: [],
