@@ -1,6 +1,7 @@
 {
   "name": "kuroneko",
   "version": "0.6.1",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
