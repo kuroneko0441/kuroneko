@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { KNDropdownModel } from 'kuroneko';
+import { KNMenuModel } from '../../kuroneko/src/menu/types';
 
 @Component({
     selector: 'kns-app',
@@ -25,6 +26,51 @@ export class AppComponent {
     public disabledDropDownValue: KNDropdownModel;
     public disabledDropDownOpened: boolean;
     public dialogVisible: boolean = false;
+    public menuResult: string = '';
+    public menuModel: KNMenuModel[] = [
+        {
+            label: 'Init new Repository',
+            items: [
+                {
+                    label: 'Repo 1',
+                    shortcut: 'Ctrl + N + 1',
+                    items: [],
+                    callback: (): void => {this.menuResult = 'menu1-1';},
+                },
+                {
+                    label: 'Repo 2',
+                    shortcut: 'Ctrl + N + 2',
+                    items: [],
+                    callback: (): void => {this.menuResult = 'menu1-2';},
+                },
+            ],
+            callback: (): void => {this.menuResult = 'menu1';},
+        },
+        {
+            label: 'Clone',
+            shortcut: 'Ctrl + D',
+            items: [],
+            callback: (): void => {this.menuResult = 'menu2';},
+        },
+        {
+            label: 'New Tab',
+            items: [
+                {
+                    label: 'tab1',
+                    shortcut: 'Ctrl + T + 1',
+                    items: [],
+                    callback: (): void => {this.menuResult = 'menu3-1';},
+                },
+                {
+                    label: 'tab2',
+                    shortcut: 'Ctrl + T + 2',
+                    items: [],
+                    callback: (): void => {this.menuResult = 'menu3-2';},
+                },
+            ],
+            callback: (): void => {this.menuResult = 'menu3';},
+        },
+    ];
     public paginatorFirstPage: number = 1;
     public paginatorLastPage: number = 10;
     public paginatorSidePages: number = 2;

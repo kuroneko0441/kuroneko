@@ -85,6 +85,23 @@ Until then, you can serve showcase locally on `localhost:4200` with `npm start`.
   ```
   <kn-input [(ngModel)]="defaultInputValue" placeholder="singleline"></kn-input>
   ```
+- **Dropdown**
+  - module 
+    - `MenuModule`
+  - component
+    - `MenuComponent`
+  - model
+    - `KNMenuModel`
+      - label
+      - shortcut?
+      - items
+      - callback
+  - property
+    - model
+  - example: 
+  ```
+  <kn-menu [model]="menuModel"></kn-menu>
+  ```
 - **Progress**
   - module 
     - `ProgressModule`

@@ -1,0 +1,10 @@
+<div class="menu__label">{{model.label}}</div>
+<div *ngIf="model.shortcut" class="menu__shortcut">{{model.shortcut}}</div>
+<i *ngIf="model.items.length > 0" class="material-icons menu__icon">arrow_right</i>
+<kn-menu
+    *ngIf="model.items.length > 0 && subMenuVisible"
+    (mouseenter)="onSubmenuMouseenter($event)"
+    (mouseleave)="onSubmenuMouseleave($event)"
+    [model]="model.items"
+    [style.left.px]="submenuLeft"
+></kn-menu>

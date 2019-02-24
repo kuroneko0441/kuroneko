@@ -1,0 +1,62 @@
+@import "../../shared";
+
+:host {
+  display: inline-flex;
+
+  padding-left: 20px;
+  box-sizing: border-box;
+
+  background-color: $primary;
+
+  cursor: default;
+  user-select: none;
+
+  &.hover {
+    background-color: hover($primary);
+  }
+
+  &.active {
+    background-color: active($primary);
+  }
+}
+
+.menu {
+  &__container {
+    height: 20px;
+  }
+
+  &__label {
+    flex: 1 1 auto;
+
+    padding-right: 20px;
+
+    font-size: 12px;
+    line-height: calc(1em + 8px);
+  }
+
+  &__shortcut {
+    flex: 0 0 auto;
+
+    padding-right: 5px;
+
+    font-size: 10px;
+    line-height: calc(1em + 10px);
+
+    opacity: 0.8;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+
+    padding-right: 5px;
+
+    font-size: 18px;
+    line-height: calc(1em + 2px);
+  }
+}
+
+kn-menu {
+  position: absolute;
+
+  margin-top: -1px;
+}
