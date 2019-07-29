@@ -1,4 +1,8 @@
 import { NgModule } from '@angular/core';
+import {
+    FormsModule,
+    ReactiveFormsModule,
+} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -32,6 +36,8 @@ import { AppComponent } from './app.component';
         PaginatorModule,
         PanelModule,
         ProgressModule,
+        FormsModule,
+        ReactiveFormsModule,
     ],
     providers: [],
     bootstrap: [ AppComponent ],

@@ -171,39 +171,39 @@
     </div>
 </div>
 <div class="component">
-    <div class="component__title">Input</div>
-    Input component must be inline-block.
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="component__example__content">
-            <kn-input [(ngModel)]="defaultInputValue" style="width: 200px;" multiline="false" placeholder="singleline"></kn-input>
-            value: {{defaultInputValueParsed}}
-        </div>
-        <div class="component__example__type">
-            multiline
-        </div>
-        <div class="component__example__content">
-            <kn-input [(ngModel)]="multilineInputValue" style="width: 200px;" multiline="true" placeholder="multiline"></kn-input>
-            value: {{multilineInputValueParsed}}
-        </div>
-        <div class="component__example__type">
-            multiline can be fixed (style="height: 200px;")
-        </div>
-        <div class="component__example__content">
-            <kn-input [(ngModel)]="fixedMultilineInputValue" style="width: 200px; height: 50px;" multiline="true" placeholder="multiline (fixed)"></kn-input>
-            value: {{fixedMultilineInputValueParsed}}
-        </div>
-        <div class="component__example__type">
-            Disabled
-        </div>
-        <div class="component__example__content">
-            <kn-input [(ngModel)]="defaultInputValue" style="width: 200px;" multiline="false" disabled="true" placeholder="Disabled singeline"></kn-input>
-            <kn-input [(ngModel)]="multilineInputValue" style="width: 200px; margin-left: 20px;" multiline="true" disabled="true" placeholder="Disabled multiline"></kn-input>
-            <kn-input [(ngModel)]="fixedMultilineInputValue" style="width: 200px; height: 50px; margin-left: 20px;" multiline="true" disabled="true" placeholder="Disabled multiline(fixed)"></kn-input>
-        </div>
+  <div class="component__title">Input</div>
+  Input component must be inline-block.
+  <div class="component__content">
+    <kn-input></kn-input>
+    <div class="component__example__type">
+      Default
     </div>
+    <div class="component__example__content">
+      <kn-input [(ngModel)]="defaultInputValue" [placeholder]="'singleline'" style="width: 200px;"></kn-input>
+      value: {{ defaultInputValueParsed }}
+    </div>
+    <div class="component__example__type">
+      multiline
+    </div>
+    <div class="component__example__content">
+      <kn-input [(ngModel)]="multilineInputValue" [multiline]="true" [placeholder]="'multiline'" style="width: 200px;"></kn-input>
+      value: {{ multilineInputValueParsed }}
+    </div>
+    <div class="component__example__type">
+      multiline can be fixed (style="height: 200px;")
+    </div>
+    <div class="component__example__content">
+      <kn-input [(ngModel)]="fixedMultilineInputValue" [multiline]="true" [placeholder]="'multiline (fixed)'" style="width: 200px; height: 200px;"></kn-input>
+      value: {{ fixedMultilineInputValueParsed }}
+    </div>
+    <div class="component__example__type">
+      Disabled
+    </div>
+    <div class="component__example__content">
+      <kn-input [disabled]="true" [placeholder]="'Disabled singeline'" style="width: 200px;"></kn-input>
+      <kn-input [disabled]="true" [multiline]="true" [placeholder]="'Disabled multiline'" style="width: 200px; margin-left: 20px;"></kn-input>
+    </div>
+  </div>
 </div>
 <div class="component">
     <div class="component__title">Menu</div>

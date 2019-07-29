@@ -1,2 +1,24 @@
-<div #inputRef (blur)="onBlur($event)" (click)="onClick($event)" (focus)="onFocus($event)" (input)="onInput($event)" (keydown)="onKeyupdown($event)" (keyup)="onKeyupdown($event)" [contentEditable]="!disabled" [ngClass]="ngClass" class="input-container"></div>
-<div class="input-placeholder" *ngIf="ngModel.length === 0 && placeholder.length !== 0">{{placeholder}}</div>
+<input
+    *ngIf="!multiline"
+    #inputRef
+    [disabled]="disabled"
+    [ngClass]="ngClass"
+    [placeholder]="placeholder || ''"
+    [value]="ngModel"
+    (blur)="onBlur($event)"
+    (focus)="onFocus($event)"
+    (input)="onInput($event)"
+    class="input"
+/>
+<textarea
+    *ngIf="multiline"
+    #inputRef
+    [disabled]="disabled"
+    [ngClass]="ngClass"
+    [placeholder]="placeholder || ''"
+    [value]="ngModel"
+    (blur)="onBlur($event)"
+    (focus)="onFocus($event)"
+    (input)="onInput($event)"
+    class="input"
+></textarea>

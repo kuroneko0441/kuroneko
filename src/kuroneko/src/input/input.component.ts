@@ -1,190 +1,106 @@
 import {
-    Component,
-    ElementRef,
-    EventEmitter,
-    Input,
-    Output,
-    ViewChild,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostBinding,
+  Input,
+  Optional,
+  ViewChild,
 } from '@angular/core';
+import {
+  ControlValueAccessor,
+  NgControl,
+} from '@angular/forms';
 
 @Component({
-    selector: 'kn-input',
-    templateUrl: './input.component.html',
-    styleUrls: [ './input.component.scss' ],
+  selector: 'kn-input',
+  templateUrl: './input.component.html',
+  styleUrls: [ './input.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class InputComponent {
-    @Input()
-    public get ngModel(): string {
-        return this._ngModel;
+export class InputComponent implements ControlValueAccessor {
+  @Input()
+  @HostBinding('attr.multiline')
+  public multiline: boolean = false;
+
+  @Input()
+  public placeholder: string;
+
+  @Input()
+  public disabled: boolean = false;
+
+  @ViewChild('inputRef')
+  public inputRef: ElementRef<HTMLInputElement | HTMLTextAreaElement>;
+
+  public get ngModel(): string {
+    return this.ngControl !== null ? this.ngControl.control.value : '';
+  }
+
+  public set ngModel(value: string) {
+    if (typeof this.onChange === 'function') {
+      this.onChange(value);
     }
+  }
 
-    public set ngModel(value: string) {
-        let _value = value;
+  public get ngClass(): any {
+    return {
+      multiline: this.multiline,
+      disabled: this.disabled,
+    };
+  }
 
-        if (typeof value !== 'string') {
-            _value = String(value);
-        }
+  @HostBinding('class.focused')
+  public hostClassFocused: boolean = false;
 
-        if (this._ngModel === _value) {
-            return;
-        }
+  private onChange: (event: string) => any;
+  private onTouched: (event: FocusEvent) => any;
 
-        if (this.lastEventValue !== _value) {
-            if (this.multiline) {
-                this.inputRef.nativeElement.innerHTML = decodeURIComponent(encodeURIComponent(_value)
-                    .split(encodeURI('\n'))
-                    .map((s, i) => {
-                        if (s.length === 0) {
-                            return '<div><br></div>';
-                        } else {
-                            return i > 0 ? `<div>${s}</div>` : s;
-                        }
-                    })
-                    .join(''));
-            } else {
-                _value = _value.replace(/\n/g, '');
-
-                this.inputRef.nativeElement.innerText = _value;
-            }
-
-            this.lastEventValue = _value;
-        }
-
-        this._ngModel = _value;
-        this.ngModelChange.emit(this._ngModel);
+  public constructor(
+    private readonly changeDetectorRef: ChangeDetectorRef,
+    @Optional()
+    private readonly ngControl: NgControl,
+  ) {
+    if (this.ngControl !== null) {
+      this.ngControl.valueAccessor = this;
     }
+  }
 
-    @Input()
-    public get disabled(): boolean {
-        if (typeof this._disabled === 'string') {
-            if (this._disabled === 'true') {
-                return true;
-            } else if (this._disabled === 'false') {
-                return false;
-            }
-        }
+  public onFocus(event: FocusEvent): void {
+    this.hostClassFocused = true;
+  }
 
-        return this._disabled;
+  public onBlur(event: FocusEvent): void {
+    this.hostClassFocused = false;
+
+    if (typeof this.onTouched === 'function') {
+      this.onTouched(event);
     }
+  }
 
-    public set disabled(value: boolean) {
-        this._disabled = value;
+  public onInput(event: Event): void {
+    this.ngModel = this.inputRef.nativeElement.value;
+
+    if (this.multiline) {
+      this.inputRef.nativeElement.style.overflow = 'hidden';
+      this.inputRef.nativeElement.style.height = 'auto';
+      this.inputRef.nativeElement.style.height = `${this.inputRef.nativeElement.scrollHeight}px`;
     }
+  }
 
-    @Input()
-    public get multiline(): boolean {
-        if (typeof this._multiline === 'string') {
-            if (this._multiline === 'true') {
-                return true;
-            } else if (this._multiline === 'false') {
-                return false;
-            }
-        }
+  public registerOnChange(onChange: (event: string) => any): void {
+    this.onChange = onChange;
+  }
 
-        return this._multiline;
-    }
+  public registerOnTouched(onTouched: (event: FocusEvent) => any): void {
+    this.onTouched = onTouched;
+  }
 
-    public set multiline(value: boolean) {
-        this._multiline = value;
-    }
+  public setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
 
-    @Input()
-    public get placeholder(): string {
-        if (typeof this._placeholder !== 'string') {
-            return String(this._placeholder);
-        }
-
-        return this._placeholder;
-    }
-
-    public set placeholder(value: string) {
-        this._placeholder = value;
-    }
-
-    @Output() public ngModelChange: EventEmitter<string> = new EventEmitter<string>();
-    @Output() public click: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
-    @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter<FocusEvent>();
-    @Output() public blur: EventEmitter<FocusEvent> = new EventEmitter<FocusEvent>();
-
-    @ViewChild('inputRef') private inputRef: ElementRef<HTMLDivElement>;
-
-    public get ngClass(): any {
-        return {
-            multiline: this.multiline,
-            disabled: this.disabled,
-        };
-    }
-
-    private _ngModel: string = '';
-    private _multiline: boolean = false;
-    private _disabled: boolean = false;
-    private _placeholder: string = '';
-    private lastEventValue: string = '';
-
-    public constructor() {}
-
-    public onInput(event: Event): void {
-        let parsedValue = this.inputRef.nativeElement.innerHTML;
-
-        if (parsedValue.includes('<div>')) {
-            parsedValue = parsedValue
-                .replace(/^<div><br><\/div>/, '')
-                .replace(/(<br>|<\/div>)/g, '')
-                .replace(/<div>/g, '\n');
-        } else {
-            parsedValue = parsedValue
-                .replace(/^<br>/, '')
-                .replace(/<br>/g, '\n');
-        }
-
-        this.lastEventValue = parsedValue;
-        this.ngModel = this.lastEventValue;
-    }
-
-    public onKeyupdown(event: KeyboardEvent): void {
-        if (event.key === 'Enter' && !this.multiline) {
-            event.preventDefault();
-
-            const element = this.inputRef.nativeElement;
-            const selection = document.getSelection();
-
-            if (selection.baseNode === element.firstChild && selection.baseOffset !== selection.focusOffset) {
-                const startIndex = selection.baseOffset < selection.focusOffset ? selection.baseOffset : selection.focusOffset;
-                const endIndex = selection.focusOffset < selection.baseOffset ? selection.baseOffset : selection.focusOffset;
-
-                const innerText = element.innerText;
-
-                element.innerText = innerText.slice(0, startIndex) + innerText.slice(endIndex, innerText.length);
-
-                if (element.childNodes.length > 0) {
-                    const newRange = document.createRange();
-                    newRange.setStart(element.firstChild, startIndex);
-
-                    selection.removeAllRanges();
-                    selection.addRange(newRange);
-                }
-            }
-        }
-    }
-
-    public onClick(event: MouseEvent): void {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-
-        this.click.emit(event);
-    }
-
-    public onFocus(event: FocusEvent): void {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-
-        this.focus.emit(event);
-    }
-
-    public onBlur(event: FocusEvent): void {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-
-        this.blur.emit(event);
-    }
+  public writeValue(value: string): void {
+    this.changeDetectorRef.detectChanges();
+  }
 }
