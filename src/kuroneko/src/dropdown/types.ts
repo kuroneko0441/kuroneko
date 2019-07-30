@@ -7,8 +7,8 @@ export class KNDropdownModel<T> {
     this.value = value;
   }
 
-  public equals(dropdownModel: KNDropdownModel<T>): boolean {
+  public equals(dropdownModel: KNDropdownModel<T>, valueComparer?: (a: T, b: T) => boolean): boolean {
     return this.label === dropdownModel.label
-      && this.value === dropdownModel.value;
+      && (typeof valueComparer === 'function' ? valueComparer(this.value, dropdownModel.value) : this.value === dropdownModel.value);
   }
 }
