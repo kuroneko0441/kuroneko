@@ -22,9 +22,7 @@ export class AppComponent {
         new KNDropdownModel('label4', 4),
     ];
     public defaultDropDownValue: KNDropdownModel;
-    public defaultDropDownOpened: boolean;
     public disabledDropDownValue: KNDropdownModel;
-    public disabledDropDownOpened: boolean;
     public dialogVisible: boolean = false;
     public menuResult: string = '';
     public menuModel: KNMenuModel[] = [

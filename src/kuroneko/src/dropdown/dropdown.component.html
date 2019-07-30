@@ -1,7 +1,11 @@
-<div (click)="onSelectorClick($event)" [ngClass]="ngSelectorClass" class="dropdown-selector">
-    <span class="dropdown-selector__label">{{ngModel ? ngModel.label : 'Select...'}}</span>
-    <i class="material-icons dropdown-selector__icon">expand_more</i>
+<div [ngClass]="selectorClass" (click)="onSelectorClick($event)" class="dropdown-selector">
+  <span class="dropdown-selector__label">{{ ngModel ? ngModel.label : 'Select...' }}</span>
+  <i class="material-icons dropdown-selector__icon">expand_more</i>
 </div>
 <div *ngIf="opened" class="dropdown-item__container">
-    <div *ngFor="let dropdownOption of options" (click)="onOptionClick($event, dropdownOption)" class="dropdown-item">{{dropdownOption.label}}</div>
+  <div
+      *ngFor="let dropdownOption of options"
+      (click)="onOptionClick($event, dropdownOption)"
+      class="dropdown-item"
+  >{{ dropdownOption.label }}</div>
 </div>
