@@ -13,7 +13,8 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "src/kuroneko/tsconfig.lib.json",
-            "project": "src/kuroneko/ng-package.json"
+            "project": "src/kuroneko/ng-package.json",
+            "polyfills": "src/kuroneko/polyfills.ts"
           }
         },
         "lint": {
@@ -26,6 +27,15 @@
               "**/node_modules/**",
               "src/showcase/**"
             ]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/kuroneko/test.ts",
+            "polyfills": "src/kuroneko/polyfills.ts",
+            "tsConfig": "src/kuroneko/tsconfig.spec.json",
+            "karmaConfig": "src/kuroneko/karma.conf.js",
           }
         }
       }
