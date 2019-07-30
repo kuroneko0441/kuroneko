@@ -15,16 +15,14 @@ export class AppComponent {
     public defaultInputValue: string = '';
     public multilineInputValue: string = '';
     public fixedMultilineInputValue: string = '';
-    public dropDownOptions: KNDropdownModel[] = [
+    public dropDownOptions: KNDropdownModel<any>[] = [
         new KNDropdownModel('loooooooooong label1', 'string value 1'),
         new KNDropdownModel('label2', true),
         new KNDropdownModel('label3', { value: 'object value' }),
         new KNDropdownModel('label4', 4),
     ];
-    public defaultDropDownValue: KNDropdownModel;
-    public defaultDropDownOpened: boolean;
-    public disabledDropDownValue: KNDropdownModel;
-    public disabledDropDownOpened: boolean;
+    public defaultDropDownValue: KNDropdownModel<any>;
+    public disabledDropDownValue: KNDropdownModel<any>;
     public dialogVisible: boolean = false;
     public menuResult: string = '';
     public menuModel: KNMenuModel[] = [
