@@ -1,6 +1,6 @@
 {
   "name": "kuroneko",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
