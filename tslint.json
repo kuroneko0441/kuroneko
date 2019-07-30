@@ -1,8 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rulesDirectory": [
-    "codelyzer",
-    "tslint-microsoft-contrib"
+    "codelyzer"
   ],
   "rules": {
     "member-access": [
@@ -189,11 +188,6 @@
     "directive-class-suffix": true,
     "use-host-property-decorator": true,
     "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    /* microsoft-distrib */
-    "no-relative-imports": [
-      true,
-      "allow-siblings"
-    ]
+    "use-output-property-decorator": true
   }
 }
