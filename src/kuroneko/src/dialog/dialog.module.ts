@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { DialogComponent } from './dialog.component';
 
 @NgModule({
-    declarations: [ DialogComponent ],
-    imports: [ CommonModule ],
-    exports: [ DialogComponent ],
-    providers: [],
+  declarations: [ DialogComponent ],
+  imports: [ CommonModule ],
+  exports: [ DialogComponent ],
+  providers: [],
 })
 export class DialogModule {}

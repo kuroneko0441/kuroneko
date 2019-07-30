@@ -1,10 +1,10 @@
 <div class="tab-title__container">
-    <div (click)="logEvent($event, i)" *ngFor="let tabLabel of tabLabels; index as i" [ngClass]="getTabTitleClass(i)" class="tab-title">
-        {{tabLabel}}
-    </div>
-    <div class="tab-title"></div>
+  <div *ngFor="let tabLabel of tabLabels; index as i" [ngClass]="getTabTitleClass(i)" (click)="logEvent($event, i)" class="tab-title">
+    {{ tabLabel }}
+  </div>
+  <div class="tab-title"></div>
 </div>
 <div class="tab-title__border">
-    <div #floatingBorder class="tab-title__border__floating"></div>
+  <div #floatingBorder class="tab-title__border__floating"></div>
 </div>
 <ng-content></ng-content>

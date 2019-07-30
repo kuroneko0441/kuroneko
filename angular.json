@@ -23,7 +23,8 @@
               "src/kuroneko/tsconfig.lib.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "src/showcase/**"
             ]
           }
         }
@@ -109,7 +110,8 @@
               "src/showcase/tsconfig.app.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "src/kuroneko/**"
             ]
           }
         }

@@ -4,15 +4,15 @@ import { TabPageComponent } from './tab-page/tab-page.component';
 import { TabComponent } from './tab.component';
 
 @NgModule({
-    declarations: [
-        TabComponent,
-        TabPageComponent,
-    ],
-    imports: [ CommonModule ],
-    exports: [
-        TabComponent,
-        TabPageComponent,
-    ],
-    providers: [],
+  declarations: [
+    TabComponent,
+    TabPageComponent,
+  ],
+  imports: [ CommonModule ],
+  exports: [
+    TabComponent,
+    TabPageComponent,
+  ],
+  providers: [],
 })
 export class TabModule {}
