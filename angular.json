@@ -13,8 +13,7 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "src/kuroneko/tsconfig.lib.json",
-            "project": "src/kuroneko/ng-package.json",
-            "polyfills": "src/kuroneko/polyfills.ts"
+            "project": "src/kuroneko/ng-package.json"
           }
         },
         "lint": {
