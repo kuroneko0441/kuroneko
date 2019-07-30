@@ -30,7 +30,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input()
   public disabled: boolean = false;
 
-  @ViewChild('inputRef')
+  @ViewChild('inputRef', { static: false })
   public inputRef: ElementRef<HTMLInputElement | HTMLTextAreaElement>;
 
   public get ngModel(): string {

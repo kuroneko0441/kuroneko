@@ -33,7 +33,7 @@ export class TabComponent implements AfterContentInit, AfterViewInit {
 
     @Output() public selectedTabIndexChange: EventEmitter<number> = new EventEmitter();
 
-    @ViewChild('floatingBorder') private floatingBorder: ElementRef<HTMLDivElement>;
+    @ViewChild('floatingBorder', { static: true }) private floatingBorder: ElementRef<HTMLDivElement>;
 
     @ContentChildren(TabPageComponent) private tabPages: QueryList<TabPageComponent>;
 

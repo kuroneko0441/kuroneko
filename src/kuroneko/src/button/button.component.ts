@@ -34,7 +34,7 @@ export class ButtonComponent implements OnInit {
     @Input() public icon: string = '';
     @Input() public iconPos: string = '';
 
-    @ViewChild('label') public labelRef: ElementRef<HTMLSpanElement>;
+    @ViewChild('label', { static: true }) public labelRef: ElementRef<HTMLSpanElement>;
 
     @HostBinding('class.disabled')
     public get hostDisabled(): boolean {
