@@ -26,22 +26,22 @@ import { KNDropdownModel } from './types';
 export class DropdownComponent implements ControlValueAccessor, OnInit, OnDestroy {
 
   @Input()
-  public options: KNDropdownModel[] = [];
+  public options: KNDropdownModel<any>[] = [];
 
   @Input()
   public disabled: boolean;
 
   @Output()
-  public ngModelChange: EventEmitter<KNDropdownModel> = new EventEmitter<KNDropdownModel>();
+  public ngModelChange: EventEmitter<KNDropdownModel<any>> = new EventEmitter<KNDropdownModel<any>>();
 
   @Output()
   public openedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  public get ngModel(): KNDropdownModel {
+  public get ngModel(): KNDropdownModel<any> {
     return this.ngControl.control.value;
   }
 
-  public set ngModel(value: KNDropdownModel) {
+  public set ngModel(value: KNDropdownModel<any>) {
     if (typeof this.onChange === 'function') {
       this.onChange(value);
     }
@@ -56,7 +56,7 @@ export class DropdownComponent implements ControlValueAccessor, OnInit, OnDestro
 
   public opened: boolean;
 
-  private onChange: (event: KNDropdownModel) => any;
+  private onChange: (event: KNDropdownModel<any>) => any;
   private onTouched: (event: FocusEvent) => any;
 
   private subscriptions: Rx.Subscription[] = [];
@@ -84,12 +84,12 @@ export class DropdownComponent implements ControlValueAccessor, OnInit, OnDestro
     this.opened = !this.opened;
   }
 
-  public onOptionClick(event: MouseEvent, option: KNDropdownModel): void {
+  public onOptionClick(event: MouseEvent, option: KNDropdownModel<any>): void {
     this.ngModel = option;
     this.opened = false;
   }
 
-  public registerOnChange(onChange: (event: KNDropdownModel) => any): void {
+  public registerOnChange(onChange: (event: KNDropdownModel<any>) => any): void {
     this.onChange = onChange;
   }
 
@@ -101,7 +101,7 @@ export class DropdownComponent implements ControlValueAccessor, OnInit, OnDestro
     this.disabled = isDisabled;
   }
 
-  public writeValue(value: KNDropdownModel): void {
+  public writeValue(value: KNDropdownModel<any>): void {
     this.changeDetectorRef.detectChanges();
   }
 
