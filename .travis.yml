@@ -1,25 +1,28 @@
 language: node_js
 node_js:
-  - "10"
+- '10'
 branches:
   only:
   - develop
-  - v/^v\d+.\d+.\d+$/
-
+  - "/^v[0-9]+\\.[0-9]+\\.[0-9]+$/"
 env:
-  - REPO=kuroneko
-
+- REPO=kuroneko
 jobs:
   include:
-    - stage: "Lint"
-      script: npm run lint
-    - stage: "Test"
-      script: npm run test-headless
-    - stage: "Build"
-      script: npm run build
-      after_success:
-        - if [ -n "$TRAVIS_TAG" ]; then
-            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "rm -rf deploy/$REPO
-            mkdir -p deploy/$REPO"
-            scp -o StrictHostKeyChecking=no -r dist/* $SSH_USER@$SSH_HOST:deploy/$REPO
-          fi
+  - stage: Lint
+    script: npm run lint
+  - stage: Test
+    script: npm run test-headless
+  - stage: Build
+    script: npm run build
+before_deploy:
+- mkdir -p dist/kuroneko && cd dist/kuroneko
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: kuroneko0441@gmail.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
+    condition: "$TRAVIS_TAG =~ ^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+    repo: kuroneko0441/kuroneko
