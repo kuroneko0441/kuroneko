@@ -4,12 +4,12 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
 import { MenuComponent } from './menu.component';
 
 @NgModule({
-    declarations: [
-        MenuComponent,
-        MenuItemComponent,
-    ],
-    imports: [ CommonModule ],
-    exports: [ MenuComponent ],
-    providers: [],
+  declarations: [
+    MenuComponent,
+    MenuItemComponent,
+  ],
+  imports: [ CommonModule ],
+  exports: [ MenuComponent ],
+  providers: [],
 })
 export class MenuModule {}

@@ -23,8 +23,18 @@
               "src/kuroneko/tsconfig.lib.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "src/showcase/**"
             ]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/kuroneko/test.ts",
+            "polyfills": "src/kuroneko/polyfills.ts",
+            "tsConfig": "src/kuroneko/tsconfig.spec.json",
+            "karmaConfig": "src/kuroneko/karma.conf.js",
           }
         }
       }
@@ -109,7 +119,8 @@
               "src/showcase/tsconfig.app.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "src/kuroneko/**"
             ]
           }
         }

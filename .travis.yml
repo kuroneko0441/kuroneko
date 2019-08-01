@@ -1,20 +1,25 @@
 language: node_js
 node_js:
-  - "8"
-
+  - "10"
 branches:
   only:
-    - master
-    - develop
+  - develop
+  - v/^v\d+.\d+.\d+$/
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install sshpass -y
+env:
+  - REPO=kuroneko
 
-script:
-  - npm run lint
-  - npm run build
-  
-after_success:
-  - test $TRAVIS_BRANCH = "master" && sshpass -p$SSH_PASSWORD ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "rm -rf deploy/kuroneko && mkdir -p deploy/kuroneko"
-  - test $TRAVIS_BRANCH = "master" && sshpass -p$SSH_PASSWORD scp -o StrictHostKeyChecking=no -r dist/showcase/* $SSH_USER@$SSH_HOST:deploy/kuroneko
+jobs:
+  include:
+    - stage: "Lint"
+      script: npm run lint
+    - stage: "Test"
+      script: npm run test-headless
+    - stage: "Build"
+      script: npm run build
+      after_success:
+        - if [ -n "$TRAVIS_TAG" ]; then
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "rm -rf deploy/$REPO
+            mkdir -p deploy/$REPO"
+            scp -o StrictHostKeyChecking=no -r dist/* $SSH_USER@$SSH_HOST:deploy/$REPO
+          fi

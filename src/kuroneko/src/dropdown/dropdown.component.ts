@@ -32,10 +32,10 @@ export class DropdownComponent implements ControlValueAccessor, OnInit, OnDestro
   public disabled: boolean;
 
   @Output()
-  public ngModelChange: EventEmitter<KNDropdownModel<any>> = new EventEmitter<KNDropdownModel<any>>();
+  public readonly ngModelChange: EventEmitter<KNDropdownModel<any>> = new EventEmitter<KNDropdownModel<any>>();
 
   @Output()
-  public openedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  public readonly openedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public get ngModel(): KNDropdownModel<any> {
     return this.ngControl.control.value;
@@ -77,7 +77,7 @@ export class DropdownComponent implements ControlValueAccessor, OnInit, OnDestro
 
   public ngOnDestroy(): void {
     this.subscriptions
-      .forEach((subscription) => subscription.unsubscribe());
+      .forEach(subscription => subscription.unsubscribe());
   }
 
   public onSelectorClick(event: MouseEvent): void {
@@ -110,7 +110,7 @@ export class DropdownComponent implements ControlValueAccessor, OnInit, OnDestro
       .push(
         Rx.fromEvent(document, 'mousedown')
           .pipe(
-            RxOp.filter((event) => (event.target as HTMLElement).closest('kn-dropdown') !== this.elementRef.nativeElement),
+            RxOp.filter(event => (event.target as HTMLElement).closest('kn-dropdown') !== this.elementRef.nativeElement),
           )
           .subscribe((event: MouseEvent) => {
             this.opened = false;

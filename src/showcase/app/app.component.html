@@ -1,170 +1,170 @@
 <router-outlet></router-outlet>
 <div class="component">
-    <div class="component__title">Button</div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="flex--row">
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button (blur)="primaryButtonEvent = 'blurred!'" (click)="primaryButtonEvent = 'clicked!'" (focus)="primaryButtonEvent = 'focused!'">
-                        Primary Button
-                    </kn-button>
-                </div>
-                event: {{primaryButtonEvent}}
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button (blur)="lightButtonEvent = 'blurred!'" (click)="lightButtonEvent = 'clicked!'" (focus)="lightButtonEvent = 'focused!'" color="light">
-                        Light Button
-                    </kn-button>
-                </div>
-                event: {{lightButtonEvent}}
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button (blur)="darkButtonEvent = 'blurred!'" (click)="darkButtonEvent = 'clicked!'" (focus)="darkButtonEvent = 'focused!'" color="dark">
-                        Dark Button
-                    </kn-button>
-                </div>
-                event: {{darkButtonEvent}}
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button color="minimal">
-                        Minimal Button
-                    </kn-button>
-                </div>
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button color="text">
-                        Text Button
-                    </kn-button>
-                </div>
-            </div>
-        </div>
-        <div class="component__example__type">
-            With icons
-        </div>
-        <div class="flex--row">
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button icon="autorenew">
-                        Left Icon Button
-                    </kn-button>
-                </div>
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button icon="done" iconPos="right">
-                        Right Icon Button
-                    </kn-button>
-                </div>
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button icon="get_app" iconPos="right"></kn-button>
-                </div>
-            </div>
-        </div>
-        <div class="component__example__type">
-            Disabled
-        </div>
-        <div class="flex--row">
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" disabled="true">
-                        Default Disabled Button
-                    </kn-button>
-                </div>
-                event: {{disabledButtonEvent}}
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" color="light" disabled="true">
-                        Light Disabled Button
-                    </kn-button>
-                </div>
-                event: {{disabledButtonEvent}}
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" color="dark" disabled="true">
-                        Dark Disabled Button
-                    </kn-button>
-                </div>
-                event: {{disabledButtonEvent}}
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button color="minimal" disabled="true">
-                        Minimal Disabled Button
-                    </kn-button>
-                </div>
-            </div>
-            <div class="flex__item">
-                <div class="component__example__content">
-                    <kn-button color="text" disabled="true">
-                        Text Button
-                    </kn-button>
-                </div>
-            </div>
-        </div>
+  <div class="component__title">Button</div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Default
     </div>
+    <div class="flex--row">
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button (blur)="primaryButtonEvent = 'blurred!'" (click)="primaryButtonEvent = 'clicked!'" (focus)="primaryButtonEvent = 'focused!'">
+            Primary Button
+          </kn-button>
+        </div>
+        event: {{ primaryButtonEvent }}
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button (blur)="lightButtonEvent = 'blurred!'" (click)="lightButtonEvent = 'clicked!'" (focus)="lightButtonEvent = 'focused!'" color="light">
+            Light Button
+          </kn-button>
+        </div>
+        event: {{ lightButtonEvent }}
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button (blur)="darkButtonEvent = 'blurred!'" (click)="darkButtonEvent = 'clicked!'" (focus)="darkButtonEvent = 'focused!'" color="dark">
+            Dark Button
+          </kn-button>
+        </div>
+        event: {{ darkButtonEvent }}
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button color="minimal">
+            Minimal Button
+          </kn-button>
+        </div>
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button color="text">
+            Text Button
+          </kn-button>
+        </div>
+      </div>
+    </div>
+    <div class="component__example__type">
+      With icons
+    </div>
+    <div class="flex--row">
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button icon="autorenew">
+            Left Icon Button
+          </kn-button>
+        </div>
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button icon="done" iconPos="right">
+            Right Icon Button
+          </kn-button>
+        </div>
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button icon="get_app" iconPos="right"></kn-button>
+        </div>
+      </div>
+    </div>
+    <div class="component__example__type">
+      Disabled
+    </div>
+    <div class="flex--row">
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" disabled="true">
+            Default Disabled Button
+          </kn-button>
+        </div>
+        event: {{ disabledButtonEvent }}
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" color="light" disabled="true">
+            Light Disabled Button
+          </kn-button>
+        </div>
+        event: {{ disabledButtonEvent }}
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button (blur)="disabledButtonEvent = 'blurred!'" (click)="disabledButtonEvent = 'clicked!'" (focus)="disabledButtonEvent = 'focused!'" color="dark" disabled="true">
+            Dark Disabled Button
+          </kn-button>
+        </div>
+        event: {{ disabledButtonEvent }}
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button color="minimal" disabled="true">
+            Minimal Disabled Button
+          </kn-button>
+        </div>
+      </div>
+      <div class="flex__item">
+        <div class="component__example__content">
+          <kn-button color="text" disabled="true">
+            Text Button
+          </kn-button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="component">
-    <div class="component__title">Dialog</div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="component__example__content">
-            <kn-button (click)="dialogVisible = true">Open Dialog</kn-button>
-            <kn-dialog [dialogTemplate]="dialogTemplate" [visible]="dialogVisible">
-                <ng-template #dialogTemplate>
-                    <div class="flex--column">
-                        <div class="flex--row" style="justify-content: flex-start; margin-bottom: 20px;">
-                            Dialog
-                        </div>
-                        <kn-tab style="width: 300px; height: 300px;">
-                            <kn-tab-page *ngFor="let _ of [].constructor(3); index as i" [label]="'label' + i" [bodyTemplate]="tabPageTemplate">
-                                <ng-template #tabPageTemplate>
-                                    tab{{i}}
-                                </ng-template>
-                            </kn-tab-page>
-                        </kn-tab>
-                        <div class="flex--row" style="justify-content: flex-end; margin-top: 20px;">
-                            <kn-button (click)="dialogVisible = false">Close</kn-button>
-                        </div>
-                    </div>
-                </ng-template>
-            </kn-dialog>
-        </div>
+  <div class="component__title">Dialog</div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Default
     </div>
+    <div class="component__example__content">
+      <kn-button (click)="dialogVisible = true">Open Dialog</kn-button>
+      <kn-dialog [dialogTemplate]="dialogTemplate" [visible]="dialogVisible">
+        <ng-template #dialogTemplate>
+          <div class="flex--column">
+            <div class="flex--row" style="justify-content: flex-start; margin-bottom: 20px;">
+              Dialog
+            </div>
+            <kn-tab style="width: 300px; height: 300px;">
+              <kn-tab-page *ngFor="let _ of [].constructor(3); index as i" [bodyTemplate]="tabPageTemplate" [label]="'label' + i">
+                <ng-template #tabPageTemplate>
+                  tab{{ i }}
+                </ng-template>
+              </kn-tab-page>
+            </kn-tab>
+            <div class="flex--row" style="justify-content: flex-end; margin-top: 20px;">
+              <kn-button (click)="dialogVisible = false">Close</kn-button>
+            </div>
+          </div>
+        </ng-template>
+      </kn-dialog>
+    </div>
+  </div>
 </div>
 <div class="component">
   <div class="component__title">Dropdown</div>
   <div class="component__content">
     <div class="component__example__content">
-      <div *ngFor="let dropdownOption of dropDownOptions">{{dropdownOption | json}}</div>
+      <div *ngFor="let dropdownOption of dropDownOptions">{{ dropdownOption | json }}</div>
     </div>
     <div class="component__example__type">
       Default
     </div>
     <div class="component__example__content">
       <kn-dropdown [(ngModel)]="defaultDropDownValue" [options]="dropDownOptions" style="width: 100px;"></kn-dropdown>
-      <div>value: {{defaultDropDownValue?.value | json}}</div>
-      <div>model: {{defaultDropDownValue | json}}</div>
+      <div>value: {{ defaultDropDownValue?.value | json }}</div>
+      <div>model: {{ defaultDropDownValue | json }}</div>
     </div>
     <div class="component__example__type">
       Disabled
     </div>
     <div class="component__example__content">
       <kn-dropdown [(ngModel)]="disabledDropDownValue" [options]="dropDownOptions" disabled="true" style="width: 100px;"></kn-dropdown>
-      <div>value: {{disabledDropDownValue?.value | json}}</div>
-      <div>model: {{disabledDropDownValue | json}}</div>
+      <div>value: {{ disabledDropDownValue?.value | json }}</div>
+      <div>model: {{ disabledDropDownValue | json }}</div>
     </div>
   </div>
 </div>
@@ -204,110 +204,110 @@
   </div>
 </div>
 <div class="component">
-    <div class="component__title">Menu</div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="flex__item">
-            <div class="component__example__content">
-                <kn-menu [model]="menuModel"></kn-menu>
-            </div>
-            value: {{menuResult}}
-        </div>
+  <div class="component__title">Menu</div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Default
     </div>
+    <div class="flex__item">
+      <div class="component__example__content">
+        <kn-menu [model]="menuModel"></kn-menu>
+      </div>
+      value: {{ menuResult }}
+    </div>
+  </div>
 </div>
 <div class="component">
-    <div class="component__title">Tab/TabPage</div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="component__example__content">
-            <kn-tab style="width: 300px; height: 300px;">
-                <kn-tab-page *ngFor="let _ of [].constructor(3); index as i" [label]="'label' + i" [bodyTemplate]="bodyTemplate">
-                    <ng-template #bodyTemplate>
-                        tab{{i}}
-                    </ng-template>
-                </kn-tab-page>
-            </kn-tab>
-        </div>
+  <div class="component__title">Tab/TabPage</div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Default
     </div>
+    <div class="component__example__content">
+      <kn-tab style="width: 300px; height: 300px;">
+        <kn-tab-page *ngFor="let _ of [].constructor(3); index as i" [bodyTemplate]="bodyTemplate" [label]="'label' + i">
+          <ng-template #bodyTemplate>
+            tab{{ i }}
+          </ng-template>
+        </kn-tab-page>
+      </kn-tab>
+    </div>
+  </div>
 </div>
 <div class="component">
-    <div class="component__title">Pagination</div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="component__example__content">
-            <kn-paginator [(page)]="paginatorPage" [firstPage]="paginatorFirstPage" [lastPage]="paginatorLastPage" [sidePages]="paginatorSidePages"></kn-paginator>
-        </div>
+  <div class="component__title">Pagination</div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Default
     </div>
+    <div class="component__example__content">
+      <kn-paginator [(page)]="paginatorPage" [firstPage]="paginatorFirstPage" [lastPage]="paginatorLastPage" [sidePages]="paginatorSidePages"></kn-paginator>
+    </div>
+  </div>
 </div>
 <div class="component">
-    <div class="component__title">Panel</div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="component__example__content">
-            <kn-panel>
-                <div>This is a simple panel.</div>
-                <div>This fills its parent.</div>
-                <kn-panel style="width: 50%; margin-top: 10px;">
-                    <kn-button>Of course</kn-button>
-                    you can customize it.
-                </kn-panel>
-            </kn-panel>
-        </div>
+  <div class="component__title">Panel</div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Default
     </div>
+    <div class="component__example__content">
+      <kn-panel>
+        <div>This is a simple panel.</div>
+        <div>This fills its parent.</div>
+        <kn-panel style="width: 50%; margin-top: 10px;">
+          <kn-button>Of course</kn-button>
+          you can customize it.
+        </kn-panel>
+      </kn-panel>
+    </div>
+  </div>
 </div>
 <div class="component">
-    <div class="component__title">Progress</div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Default
-        </div>
-        <div class="component__example__content">
-            <kn-progress value="30"></kn-progress>
-        </div>
+  <div class="component__title">Progress</div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Default
     </div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Label
-        </div>
-        <div class="component__example__content">
-            <kn-progress value="40" label="true"></kn-progress>
-        </div>
+    <div class="component__example__content">
+      <kn-progress value="30"></kn-progress>
     </div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Height
-        </div>
-        Height must bigger then 20.
-        <div class="component__example__content">
-            <kn-progress value="20" height="20" style="margin-bottom: 10px;"></kn-progress>
-            <kn-progress value="70" height="40" style="margin-bottom: 10px;"></kn-progress>
-            <kn-progress value="50" height="80"></kn-progress>
-        </div>
+  </div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Label
     </div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Striped
-        </div>
-        <div class="component__example__content">
-            <kn-progress value="30" height="20" label="true" striped="true" style="margin-bottom: 10px;"></kn-progress>
-            <kn-progress value="80" height="40" label="true" striped="true"></kn-progress>
-        </div>
+    <div class="component__example__content">
+      <kn-progress label="true" value="40"></kn-progress>
     </div>
-    <div class="component__content">
-        <div class="component__example__type">
-            Animated
-        </div>
-        <div class="component__example__content">
-            <kn-progress value="90" height="20" label="true" striped="true" animated="true" style="margin-bottom: 10px;"></kn-progress>
-            <kn-progress value="50" height="40" label="true" striped="true" animated="true"></kn-progress>
-        </div>
+  </div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Height
     </div>
+    Height must bigger then 20.
+    <div class="component__example__content">
+      <kn-progress height="20" style="margin-bottom: 10px;" value="20"></kn-progress>
+      <kn-progress height="40" style="margin-bottom: 10px;" value="70"></kn-progress>
+      <kn-progress height="80" value="50"></kn-progress>
+    </div>
+  </div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Striped
+    </div>
+    <div class="component__example__content">
+      <kn-progress height="20" label="true" striped="true" style="margin-bottom: 10px;" value="30"></kn-progress>
+      <kn-progress height="40" label="true" striped="true" value="80"></kn-progress>
+    </div>
+  </div>
+  <div class="component__content">
+    <div class="component__example__type">
+      Animated
+    </div>
+    <div class="component__example__content">
+      <kn-progress animated="true" height="20" label="true" striped="true" style="margin-bottom: 10px;" value="90"></kn-progress>
+      <kn-progress animated="true" height="40" label="true" striped="true" value="50"></kn-progress>
+    </div>
+  </div>
 </div>
